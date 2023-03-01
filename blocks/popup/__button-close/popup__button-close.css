@@ -1,0 +1,17 @@
+.popup__button-close {
+  max-width: 32px;
+  max-height: 32px;
+  position: absolute;
+  background-image: url(../images/krest.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup__button-close:hover {
+  color: #000;
+  opacity: 15%;
+  transition: 0.5s ease-in-out;
+}
