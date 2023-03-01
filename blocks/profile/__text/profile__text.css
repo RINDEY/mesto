@@ -8,3 +8,10 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media (max-width: 525px) {
+  .profile__text {
+    margin-bottom: 36px;
+    align-self: center;
+  }
+}

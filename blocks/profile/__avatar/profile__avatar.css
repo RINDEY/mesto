@@ -4,3 +4,10 @@
   position: relative;
   border-radius: 50%;
 }
+
+@media (max-width: 525px) {
+  .profile__avatar {
+    align-self: center;
+    margin-bottom: 22px;
+  }
+}

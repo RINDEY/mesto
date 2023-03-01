@@ -3,3 +3,9 @@
   margin: 0 auto;
   margin-bottom: 60px;
 }
+
+@media (max-width: 900px) {
+  .footer {
+    margin-bottom: 36px;
+  }
+}

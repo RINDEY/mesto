@@ -5,3 +5,11 @@
   margin: 0 auto;
   margin-bottom: 40px;
 }
+
+@media (max-width: 900px) {
+  .header {
+    padding-left: 27px;
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+}

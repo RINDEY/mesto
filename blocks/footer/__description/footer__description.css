@@ -3,4 +3,12 @@
   line-height: 22px;
   max-width: 318px;
   color: #545454;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .footer__description {
+    margin: 0 auto;
+    margin-left: 19px;
+  }
 }
