@@ -16,3 +16,12 @@
   opacity: 15%;
   transition: 0.5s ease-in-out;
 }
+
+@media (max-width: 425px) {
+  .popup__button-submit {
+    width: 238px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
