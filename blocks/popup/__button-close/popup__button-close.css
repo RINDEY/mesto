@@ -18,3 +18,12 @@
   opacity: 15%;
   transition: 0.5s ease-in-out;
 }
+
+@media (max-width: 650px) {
+  .popup__button-close{
+    width: 20px;
+    height: 20px;
+    top: -36px;
+    right: 0px;
+  }
+}

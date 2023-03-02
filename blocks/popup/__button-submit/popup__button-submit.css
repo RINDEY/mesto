@@ -17,7 +17,7 @@
   transition: 0.5s ease-in-out;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 650px) {
   .popup__button-submit {
     width: 238px;
     height: 46px;
