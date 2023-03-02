@@ -15,7 +15,7 @@
 
 .popup__button-close:hover {
   color: #000;
-  opacity: 15%;
+  opacity: 60%;
   transition: 0.5s ease-in-out;
 }
 
@@ -25,5 +25,6 @@
     height: 20px;
     top: -36px;
     right: 0px;
+    background-size: cover;
   }
 }

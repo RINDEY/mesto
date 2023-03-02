@@ -16,7 +16,7 @@ function openPopup() {
   popup.classList.add('popup_opened');
 };
 
-function closepopup() {
+function closePopup() {
   popup.classList.remove('popup_opened');
 };
 
@@ -24,12 +24,12 @@ function handleFormSubmit(evt) {
   evt.preventDefault();
   nameInfo.textContent = nameInput.value;
   jobInfo.textContent = jobInput.value;
-  closepopup();
+  closePopup();
 }
 
 editButton.addEventListener('click', openPopup);
 
-closeButton.addEventListener('click', closepopup);
+closeButton.addEventListener('click', closePopup);
 
 formElement.addEventListener('submit', handleFormSubmit);
 
