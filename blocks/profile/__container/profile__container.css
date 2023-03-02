@@ -3,7 +3,7 @@
   position: relative;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 560px) {
   .profile__container {
     flex-direction: column;
   }

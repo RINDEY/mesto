@@ -1,10 +1,13 @@
 .popup__button-close {
-  max-width: 32px;
-  max-height: 32px;
+  width: 32px;
+  height: 32px;
   position: absolute;
-  background-image: url(../images/krest.png);
+  top: -40px;
+  right: -40px;
+  background-image: url(../../../images/krestik.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;

@@ -1,11 +1,17 @@
 .content {
   max-width: 880px;
   margin: 0 auto;
+  margin-left: 200px;
+}
+
+@media (max-width: 730px) {
+  .content {
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 525px) {
   .content {
     margin-left: 19px;
-    margin-right: 19px;
   }
 }
