@@ -1,15 +1,12 @@
 .profile__button {
-  background-image: url(../../../images/pencil.svg);
+  background-image: url(../../../images/redact.svg);
   margin-left: 18px;
-  width: 10px;
-  height: 10px;
-  padding: 7px;
-  background-color: black;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
   background-repeat: no-repeat;
-  background-position: 50%;
-  border: 1px solid #fff;
+  border: none;
   cursor: pointer;
-  outline: none;
 }
 
 .profile__button:hover {
@@ -20,8 +17,7 @@
 
 @media (max-width: 425px) {
   .profile__button {
-    width: 7.5px;
-    height: 7.5px;
-    padding: 5px;
+    width: 18px;
+    height: 18px;
   }
 }
