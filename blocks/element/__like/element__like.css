@@ -10,6 +10,6 @@
 
 .element__like:hover {
   color: #000;
-  opacity: 60%;
+  opacity: 50%;
   transition: 0.5s ease-in-out;
 }
