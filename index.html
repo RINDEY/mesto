@@ -25,50 +25,7 @@
       </div>  
       <button class="profile__add-button" type="button"></button>
     </section>
-    <section class="elements">
-      <article class="element">
-        <img src="./images/karachaevsk.png" alt="Древний храм в горах" class="element__photo">
-        <div class="element__container">
-          <h2 class="element__description">Карачаевск</h2>
-          <button type="button" class="element__like element__like_active"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img src="./images/elbrus.png" alt="Заснеженный Эльбрус" class="element__photo">
-        <div class="element__container">
-          <h2 class="element__description">Гора Эльбрус</h2>
-          <button type="button" class="element__like"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img src="./images/dombay.png" alt="Равнины в закате" class="element__photo">
-        <div class="element__container">
-          <h2 class="element__description">Домбай</h2>
-          <button type="button" class="element__like"></button>
-        </div> 
-      </article>
-      <article class="element">
-        <img src="./images/sakhalin.jpg" alt="Побережье Охотского моря" class="element__photo">
-        <div class="element__container">
-          <h2 class="element__description">Сахалин</h2>
-          <button type="button" class="element__like"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img src="./images/kurily.jpg" alt="Спящий вулкан" class="element__photo">
-        <div class="element__container">
-          <h2 class="element__description">Курилы</h2>
-          <button type="button" class="element__like"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img src="./images/karelia.jpg" alt="Горный парк Рускеала" class="element__photo">
-        <div class="element__container">
-          <h2 class="element__description">Карелия</h2>
-          <button type="button" class="element__like"></button>
-        </div>
-      </article>
-    </section>
+    <section class="elements"></section>
   </main>
   <footer class="footer">
     <p class="footer__description">&copy; 2023 Mesto Russia</p>
@@ -85,6 +42,15 @@
       <button class="popup__button-close" type="button"></button>
     </div>
   </div>
+  <template id="elementTemplate">
+    <article class="element">
+      <img class="element__photo">
+      <div class="element__container">
+        <h2 class="element__description"></h2>
+        <button type="button" class="element__like"></button>
+      </div>
+    </article>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
