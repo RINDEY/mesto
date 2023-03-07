@@ -33,6 +33,7 @@ closeButton.addEventListener('click', closePopup);
 
 formElement.addEventListener('submit', handleFormSubmit);
 
+//1пункт-добавить 6 карточек через js
 const elements = [
   {
     name: 'Карачаевск',
@@ -77,6 +78,56 @@ const createElement = (element) => {
   elementImage.setAttribute('src', element.link);
   elementImage.setAttribute('alt', element.alt);
   elementsBox.prepend(newElement);
+
+  //4пункт-лайк карточки
+const elementTemplate = document.querySelector('#elementTemplate');
+const likeButton = elementTemplate.querySelector('.element__like');
+likeButton.addEventListener('click', function(evt) {
+  evt.target.toggle('.element__like_active')
+});
+
+//5пункт-удаление
 }
 
 elements.forEach(createElement);
+
+//2пункт-сделать попап создания карточек
+let popupAddCard = document.querySelector('.popup__add-card');
+let formAddElement = document.querySelector('.popup__add-form');
+
+let addButton = document.querySelector('.profile__add-button');
+let closeAddButton = document.querySelectorAll('.popup__button-close');
+
+function openAddPopup() {
+  popupAddCard.classList.add('popup_opened');
+};
+
+function closeAddPopup() {
+  popupAddCard.classList.remove('popup_opened');
+};
+
+function handleAddFormSubmit(evt) {
+  evt.preventDefault();
+  closeAddPopup();
+}
+
+addButton.addEventListener('click', openAddPopup);
+
+closeAddButton.forEach(function (button) {
+button.addEventListener('click', closeAddPopup)
+});
+
+formAddElement.addEventListener('submit', handleAddFormSubmit);
+
+//3пункт-сделать добавление карточек посредством кнопки создать
+function handleAddFormSubmit(evt) {
+  evt.preventDefault();
+  const name = 
+  const link =
+  const newElement = {
+    name: name,
+    link: link,
+  };
+  formAddElement(newElement);
+  
+}
