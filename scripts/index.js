@@ -2,7 +2,7 @@ let popup = document.querySelector('.popup');
 let formElement = document.querySelector('.popup__form');
 
 let editButton = document.querySelector('.profile__button');
-let closeButton = document.querySelector('.popup__button-close');
+let closeAddButton = document.querySelectorAll('.popup__button-close');
 
 let nameInput = document.querySelector('.popup__input_type_name');
 let nameInfo = document.querySelector('.profile__title');
@@ -10,26 +10,39 @@ let nameInfo = document.querySelector('.profile__title');
 let jobInput = document.querySelector('.popup__input_type_job');
 let jobInfo = document.querySelector('.profile__text');
 
-function openPopup() {
-  nameInput.value = nameInfo.textContent;
-  jobInput.value = jobInfo.textContent;
-  popup.classList.add('popup_opened');
+const editPopup = document.querySelector('.popup_edit')
+
+function openPopup(block) {
+    block.classList.add('popup_opened');
 };
 
-function closePopup() {
-  popup.classList.remove('popup_opened');
+function makeValue() {
+  nameInput.value = nameInfo.textContent;
+  jobInput.value = jobInfo.textContent;
+  openPopup(editPopup);
+}
+ 
+function closePopup(block) {
+  block.classList.remove('popup_opened');
 };
+
+closeAddButton.forEach(function (button) {
+  button.addEventListener('click', function(event) {
+  const closeItem = event.target.closest('.popup')
+  closePopup(closeItem)
+})
+});
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
   nameInfo.textContent = nameInput.value;
   jobInfo.textContent = jobInput.value;
-  closePopup();
+  closePopup(editPopup);
 }
 
-editButton.addEventListener('click', openPopup);
+editButton.addEventListener('click', makeValue);
 
-closeButton.addEventListener('click', closePopup);
+// closeButton.addEventListener('click', closePopup);
 
 formElement.addEventListener('submit', handleFormSubmit);
 
@@ -37,32 +50,26 @@ formElement.addEventListener('submit', handleFormSubmit);
 const elements = [
   {
     name: 'Карачаевск',
-    alt: 'Древний храм в горах',
     link: './images/karachaevsk.png'
   },
   {
     name: 'Гора Эльбрус',
-    alt: 'Заснеженный Эльбрус',
     link: './images/elbrus.png'
   },
   {
     name: 'Домбай',
-    alt: 'Равнины в закате',
     link: './images/dombay.png'
   },
   {
     name: 'Сахалин',
-    alt: 'Побережье Охотского моря',
     link: './images/sakhalin.jpg'
   },
   {
     name: 'Курилы',
-    alt: 'Спящий вулкан',
     link: './images/kurily.jpg'
   },
   {
     name: 'Карелия',
-    alt: 'Горный парк Рускеала',
     link: './images/karelia.jpg'
   },
 ];
@@ -75,14 +82,13 @@ const createElement = (element) => {
   elementHeading.textContent = element.name;
   const elementImage = newElement.querySelector('.element__photo');
   elementImage.setAttribute('src', element.link);
-  elementImage.setAttribute('alt', element.alt);
+  elementImage.setAttribute('alt', element.name);
   
   //4пункт-лайк карточки
-// const elementTemplate = document.querySelector('#elementTemplate');
-// const likeButton = elementTemplate.querySelector('.element__like');
-// likeButton.addEventListener('click', function(evt) {
-//   evt.target.toggle('.element__like_active')
-// });
+const likeButton = newElement.querySelector('.element__like');
+likeButton.addEventListener('click', function(evt) {
+  evt.target.classList.toggle('element__like_active')
+});
 
 //5пункт-удаление
 return newElement;
@@ -93,46 +99,29 @@ function renderElement(block, item) {
 };
 
 elements.forEach(item => {
-  console.log(item),
+  renderElement(elementsBox, item)
 });
 
 //2пункт-сделать попап создания карточек
-// let popupAddCard = document.querySelector('.popup__add-card');
-// let formAddElement = document.querySelector('.popup__add-form');
+let popupAddCard = document.querySelector('.popup__add-card');
+let formAddElement = document.querySelector('.popup__add-form');
 
-// let addButton = document.querySelector('.profile__add-button');
-// let closeAddButton = document.querySelectorAll('.popup__button-close');
+let addButton = document.querySelector('.profile__add-button');
+const inputAddName = document.querySelector('.popup__input_card-name');
+const inputAddLink = document.querySelector('.popup__input_card-link');
 
-// function openAddPopup() {
-//   popupAddCard.classList.add('popup_opened');
-// };
-
-// function closeAddPopup() {
-//   popupAddCard.classList.remove('popup_opened');
-// };
-
-// function handleAddFormSubmit(evt) {
-//   evt.preventDefault();
-//   closeAddPopup();
-// }
-
-// addButton.addEventListener('click', openAddPopup);
-
-// closeAddButton.forEach(function (button) {
-// button.addEventListener('click', closeAddPopup)
-// });
-
-// formAddElement.addEventListener('submit', handleAddFormSubmit);
-
+function handleAddFormSubmit(evt) {
+  evt.preventDefault();
+  closePopup(popupAddCard);
 //3пункт-сделать добавление карточек посредством кнопки создать
-// function handleAddFormSubmit(evt) {
-//   evt.preventDefault();
-//   const name = 
-//   const link =
-//   const newElement = {
-//     name: name,
-//     link: link,
-//   };
-//   formAddElement(newElement);
-  
-// }
+  renderElement(elementsBox, {
+    name: inputAddName.value,
+    link:inputAddLink.value,
+  })
+};
+
+addButton.addEventListener('click', function() {
+  openPopup(popupAddCard)
+});
+
+formAddElement.addEventListener('submit', handleAddFormSubmit);
