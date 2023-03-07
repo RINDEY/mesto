@@ -1,14 +1,14 @@
-let popup = document.querySelector('.popup');
-let formElement = document.querySelector('.popup__form');
+const popup = document.querySelector('.popup');
+const formElement = document.querySelector('.popup__form');
 
-let editButton = document.querySelector('.profile__button');
-let closeAddButton = document.querySelectorAll('.popup__button-close');
+const editButton = document.querySelector('.profile__button');
+const closeAddButton = document.querySelectorAll('.popup__button-close');
 
-let nameInput = document.querySelector('.popup__input_type_name');
-let nameInfo = document.querySelector('.profile__title');
+const nameInput = document.querySelector('.popup__input_type_name');
+const nameInfo = document.querySelector('.profile__title');
 
-let jobInput = document.querySelector('.popup__input_type_job');
-let jobInfo = document.querySelector('.profile__text');
+const jobInput = document.querySelector('.popup__input_type_job');
+const jobInfo = document.querySelector('.profile__text');
 
 const editPopup = document.querySelector('.popup_edit')
 
@@ -41,8 +41,6 @@ function handleFormSubmit(evt) {
 }
 
 editButton.addEventListener('click', makeValue);
-
-// closeButton.addEventListener('click', closePopup);
 
 formElement.addEventListener('submit', handleFormSubmit);
 
@@ -90,7 +88,15 @@ likeButton.addEventListener('click', function(evt) {
   evt.target.classList.toggle('element__like_active')
 });
 
-//5пункт-удаление
+//5пункт-удаление карточки с помощью корзинки
+ const deleteButton = newElement.querySelector('.element__photo-basket');
+ 
+ deleteButton.addEventListener('click', function() {
+  const deleteElement = deleteButton.closest('.element');
+  console.log(deleteElement);
+  deleteElement.remove();
+ });
+
 return newElement;
 }
 
@@ -103,16 +109,17 @@ elements.forEach(item => {
 });
 
 //2пункт-сделать попап создания карточек
-let popupAddCard = document.querySelector('.popup__add-card');
-let formAddElement = document.querySelector('.popup__add-form');
+const popupAddCard = document.querySelector('.popup__add-card');
+const formAddElement = document.querySelector('.popup__add-form');
 
-let addButton = document.querySelector('.profile__add-button');
+const addButton = document.querySelector('.profile__add-button');
 const inputAddName = document.querySelector('.popup__input_card-name');
 const inputAddLink = document.querySelector('.popup__input_card-link');
 
 function handleAddFormSubmit(evt) {
   evt.preventDefault();
   closePopup(popupAddCard);
+
 //3пункт-сделать добавление карточек посредством кнопки создать
   renderElement(elementsBox, {
     name: inputAddName.value,
@@ -125,3 +132,5 @@ addButton.addEventListener('click', function() {
 });
 
 formAddElement.addEventListener('submit', handleAddFormSubmit);
+
+//7пункт-открытие попапа картинок
