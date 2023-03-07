@@ -67,7 +67,6 @@ const elements = [
   },
 ];
 
-const page = document.querySelector('.page');
 const elementsBox = document.querySelector('.elements');
 
 const createElement = (element) => {
@@ -77,57 +76,63 @@ const createElement = (element) => {
   const elementImage = newElement.querySelector('.element__photo');
   elementImage.setAttribute('src', element.link);
   elementImage.setAttribute('alt', element.alt);
-  elementsBox.prepend(newElement);
-
+  
   //4пункт-лайк карточки
-const elementTemplate = document.querySelector('#elementTemplate');
-const likeButton = elementTemplate.querySelector('.element__like');
-likeButton.addEventListener('click', function(evt) {
-  evt.target.toggle('.element__like_active')
-});
+// const elementTemplate = document.querySelector('#elementTemplate');
+// const likeButton = elementTemplate.querySelector('.element__like');
+// likeButton.addEventListener('click', function(evt) {
+//   evt.target.toggle('.element__like_active')
+// });
 
 //5пункт-удаление
+return newElement;
 }
 
-elements.forEach(createElement);
-
-//2пункт-сделать попап создания карточек
-let popupAddCard = document.querySelector('.popup__add-card');
-let formAddElement = document.querySelector('.popup__add-form');
-
-let addButton = document.querySelector('.profile__add-button');
-let closeAddButton = document.querySelectorAll('.popup__button-close');
-
-function openAddPopup() {
-  popupAddCard.classList.add('popup_opened');
+function renderElement(block, item) {
+  block.prepend(createElement(item))
 };
 
-function closeAddPopup() {
-  popupAddCard.classList.remove('popup_opened');
-};
-
-function handleAddFormSubmit(evt) {
-  evt.preventDefault();
-  closeAddPopup();
-}
-
-addButton.addEventListener('click', openAddPopup);
-
-closeAddButton.forEach(function (button) {
-button.addEventListener('click', closeAddPopup)
+elements.forEach(item => {
+  console.log(item),
 });
 
-formAddElement.addEventListener('submit', handleAddFormSubmit);
+//2пункт-сделать попап создания карточек
+// let popupAddCard = document.querySelector('.popup__add-card');
+// let formAddElement = document.querySelector('.popup__add-form');
+
+// let addButton = document.querySelector('.profile__add-button');
+// let closeAddButton = document.querySelectorAll('.popup__button-close');
+
+// function openAddPopup() {
+//   popupAddCard.classList.add('popup_opened');
+// };
+
+// function closeAddPopup() {
+//   popupAddCard.classList.remove('popup_opened');
+// };
+
+// function handleAddFormSubmit(evt) {
+//   evt.preventDefault();
+//   closeAddPopup();
+// }
+
+// addButton.addEventListener('click', openAddPopup);
+
+// closeAddButton.forEach(function (button) {
+// button.addEventListener('click', closeAddPopup)
+// });
+
+// formAddElement.addEventListener('submit', handleAddFormSubmit);
 
 //3пункт-сделать добавление карточек посредством кнопки создать
-function handleAddFormSubmit(evt) {
-  evt.preventDefault();
-  const name = 
-  const link =
-  const newElement = {
-    name: name,
-    link: link,
-  };
-  formAddElement(newElement);
+// function handleAddFormSubmit(evt) {
+//   evt.preventDefault();
+//   const name = 
+//   const link =
+//   const newElement = {
+//     name: name,
+//     link: link,
+//   };
+//   formAddElement(newElement);
   
-}
+// }
