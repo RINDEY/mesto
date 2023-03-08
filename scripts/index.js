@@ -98,7 +98,7 @@ likeButton.addEventListener('click', function(evt) {
  });
 
 //6пункт-открытие попапа картинок
-  const popupImage = document.querySelector('.popup__image');
+  const popupImage = document.querySelector('.popup_image');
   const popupCaption = document.querySelector('.popup__caption');
   const popupCardImage = document.querySelector('.popup__card-image');
 
@@ -127,7 +127,7 @@ elements.forEach(item => {
 });
 
 //2пункт-сделать попап создания карточек
-const popupAddCard = document.querySelector('.popup__add-card');
+const popupAddCard = document.querySelector('.popup_add-card');
 const formAddElement = document.querySelector('.popup__add-form');
 
 const addButton = document.querySelector('.profile__add-button');
