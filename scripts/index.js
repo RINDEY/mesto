@@ -2,7 +2,7 @@ const popup = document.querySelector('.popup');
 const formElement = document.querySelector('.popup__form');
 
 const editButton = document.querySelector('.profile__button');
-const closeAddButton = document.querySelectorAll('.popup__button-close');
+const closeAddButtons = document.querySelectorAll('.popup__button-close');
 
 const nameInput = document.querySelector('.popup__input_type_name');
 const nameInfo = document.querySelector('.profile__title');
@@ -11,6 +11,20 @@ const jobInput = document.querySelector('.popup__input_type_job');
 const jobInfo = document.querySelector('.profile__text');
 
 const editPopup = document.querySelector('.popup_edit')
+
+const popupImage = document.querySelector('.popup_image');
+const popupCaption = document.querySelector('.popup__caption');
+const popupCardImage = document.querySelector('.popup__card-image');
+
+const popupAddCard = document.querySelector('.popup_add-card');
+const formAddElement = document.querySelector('.popup__add-form');
+const addButton = document.querySelector('.profile__add-button');
+const inputAddName = document.querySelector('.popup__input_card-name');
+const inputAddLink = document.querySelector('.popup__input_card-link');
+
+const templateElement = document.querySelector('#elementTemplate').content;
+
+// const newElement = document.querySelector('#elementTemplate').content.cloneNode(true);
 
 function openPopup(block) {
     block.classList.add('popup_opened');
@@ -26,7 +40,7 @@ function closePopup(block) {
   block.classList.remove('popup_opened');
 };
 
-closeAddButton.forEach(function (button) {
+closeAddButtons.forEach(function (button) {
   button.addEventListener('click', function(event) {
   const closeItem = event.target.closest('.popup')
   closePopup(closeItem)
@@ -75,7 +89,7 @@ const elements = [
 const elementsBox = document.querySelector('.elements');
 
 const createElement = (element) => {
-  const newElement = document.querySelector('#elementTemplate').content.cloneNode(true);
+  const newElement = templateElement.querySelector('.element').cloneNode(true);
   const elementHeading = newElement.querySelector('.element__description');
   elementHeading.textContent = element.name;
   const elementImage = newElement.querySelector('.element__photo');
@@ -89,19 +103,15 @@ likeButton.addEventListener('click', function(evt) {
 });
 
 //5пункт-удаление карточки с помощью корзинки
- const deleteButton = newElement.querySelector('.element__photo-basket');
- 
- deleteButton.addEventListener('click', function() {
+const deleteButton = newElement.querySelector('.element__photo-basket');
+
+deleteButton.addEventListener('click', function() {
   const deleteElement = deleteButton.closest('.element');
   console.log(deleteElement);
   deleteElement.remove();
  });
 
 //6пункт-открытие попапа картинок
-  const popupImage = document.querySelector('.popup_image');
-  const popupCaption = document.querySelector('.popup__caption');
-  const popupCardImage = document.querySelector('.popup__card-image');
-
 function openPopupImg(element) {
   popupCardImage.src = element.link;
   popupCaption.textContent = element.name;
@@ -110,10 +120,6 @@ function openPopupImg(element) {
 };
 
 elementImage.addEventListener('click', () => openPopupImg(element));
-
-function closepopupImage(image) {
-  image.classList.remove('popup_opened');
-};
 
 return newElement;
 }
@@ -127,13 +133,6 @@ elements.forEach(item => {
 });
 
 //2пункт-сделать попап создания карточек
-const popupAddCard = document.querySelector('.popup_add-card');
-const formAddElement = document.querySelector('.popup__add-form');
-
-const addButton = document.querySelector('.profile__add-button');
-const inputAddName = document.querySelector('.popup__input_card-name');
-const inputAddLink = document.querySelector('.popup__input_card-link');
-
 function handleAddFormSubmit(evt) {
   evt.preventDefault();
   closePopup(popupAddCard);
@@ -143,6 +142,7 @@ function handleAddFormSubmit(evt) {
     name: inputAddName.value,
     link:inputAddLink.value,
   })
+  evt.target.reset();
 };
 
 addButton.addEventListener('click', function() {
