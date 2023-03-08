@@ -97,6 +97,24 @@ likeButton.addEventListener('click', function(evt) {
   deleteElement.remove();
  });
 
+//6пункт-открытие попапа картинок
+  const popupImage = document.querySelector('.popup__image');
+  const popupCaption = document.querySelector('.popup__caption');
+  const popupCardImage = document.querySelector('.popup__card-image');
+
+function openPopupImg(element) {
+  popupCardImage.src = element.link;
+  popupCaption.textContent = element.name;
+  popupCardImage.alt = element.name;
+  openPopup(popupImage);
+};
+
+elementImage.addEventListener('click', () => openPopupImg(element));
+
+function closepopupImage(image) {
+  image.classList.remove('popup_opened');
+};
+
 return newElement;
 }
 
@@ -132,5 +150,3 @@ addButton.addEventListener('click', function() {
 });
 
 formAddElement.addEventListener('submit', handleAddFormSubmit);
-
-//7пункт-открытие попапа картинок

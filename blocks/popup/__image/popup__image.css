@@ -1,5 +1,4 @@
-.popup__card-image {
-  display: flex;
+.popup__image {
   justify-content: center;
   align-items: center;
   position: fixed;
