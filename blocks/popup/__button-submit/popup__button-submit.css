@@ -13,8 +13,7 @@
 }
 
 .popup__button-submit:hover {
-  color: #000;
-  opacity: 15%;
+  opacity: 0.8;
   transition: 0.5s ease-in-out;
 }
 
