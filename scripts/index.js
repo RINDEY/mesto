@@ -27,7 +27,7 @@ const templateElement = document.querySelector('#elementTemplate').content;
 const buttonPopupEdit = document.querySelector('.popup__button-edit');
 const buttonPopupAdd = document.querySelector('.popup__button-add');
 
-const formEditElement = document.querySelector('.popup__edit_form');
+const formEditElement = document.querySelector('.popup__edit-form');
 
 //Закрытие попапа с помощью escape и overlay
 function addListeners(popup) {
