@@ -1,16 +1,16 @@
-.popup_error {
+.popup__error {
     min-height: 30px;
     width: 100%;
     display: block;
     padding-top: 5px;
 }
 
-.popup_error:first-child {
+.popup__error:first-child {
     margin-bottom: 3px;
 }
 
 @media (max-width:425px) {
-    .popup_error {
+    .popup__error {
       padding: 0;
       margin: 0;
     }
