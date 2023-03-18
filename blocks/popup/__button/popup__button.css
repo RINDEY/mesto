@@ -18,7 +18,7 @@
   transition: 0.5s ease-in-out;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .popup__button {
     max-width: 238px;
     height: 46px;

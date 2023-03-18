@@ -3,6 +3,8 @@
     width: 100%;
     display: block;
     padding-top: 5px;
+    font-size: 12px;
+    line-height: 15px;
 }
 
 .popup__error:first-child {

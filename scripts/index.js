@@ -1,5 +1,5 @@
 const popup = document.querySelector('.popup');
-const formElement = document.querySelector('.popup__form');
+const formEditProfile = document.querySelector('.popup__form');
 
 const editButton = document.querySelector('.profile__button');
 const closeAddButtons = document.querySelectorAll('.popup__button-close');
@@ -56,7 +56,7 @@ function openPopup(block) {
     addListeners(block);
 };
 
-function makeValue() {
+function openEditProfileForm() {
   nameInput.value = nameInfo.textContent;
   jobInput.value = jobInfo.textContent;
   openPopup(editPopup);
@@ -76,16 +76,16 @@ closeAddButtons.forEach(function (button) {
 })
 });
 
-function handleFormSubmit(evt) {
+function submitEditProfileForm(evt) {
   evt.preventDefault();
   nameInfo.textContent = nameInput.value;
   jobInfo.textContent = jobInput.value;
   closePopup(editPopup);
 };
 
-editButton.addEventListener('click', makeValue);
+editButton.addEventListener('click', openEditProfileForm);
 
-formElement.addEventListener('submit', handleFormSubmit);
+formEditProfile.addEventListener('submit', submitEditProfileForm);
 
 //1пункт-добавить 6 карточек через js
 const elements = [
