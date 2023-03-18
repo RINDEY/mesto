@@ -33,12 +33,12 @@
   <div class="popup popup_edit">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="form" novalidate>
+      <form class="popup__form popup__edit_form" name="form" novalidate>
         <input type="text" placeholder="Жак-Ив Кусто" name="popup-name" id="edit-name" class="popup__input popup__input_type_name" minlength="2" maxlength="40" required>
         <span class="popup_error edit-name-error"></span>
         <input type="text" placeholder="Исследователь океана" name="popup-job" id="edit-job" class="popup__input popup__input_type_job" minlength="2" maxlength="200" required>
         <span class="popup_error edit-job-error"></span>
-        <button class="popup__button popup__button-submit" type="submit" name="submit">Сохранить</button>
+        <button class="popup__button popup__button-edit" type="submit" name="submit">Сохранить</button>
       </form>
       <button class="popup__button-close" type="button"></button>
     </div>
@@ -51,7 +51,7 @@
         <span class="popup_error add-text-error"></span>
         <input type="url" placeholder="Ссылка на картинку" name="popup-link" id="add-link" class="popup__input popup__input_card-link" required>
         <span class="popup_error add-link-error"></span>
-        <button class="popup__button popup__button-submit" type="submit" name="submit">Создать</button>
+        <button class="popup__button popup__button-add" type="submit" name="submit">Создать</button>
       </form>
       <button class="popup__button-close" type="button"></button>
     </div>

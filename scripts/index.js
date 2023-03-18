@@ -24,20 +24,49 @@ const inputAddLink = document.querySelector('.popup__input_card-link');
 
 const templateElement = document.querySelector('#elementTemplate').content;
 
-// const newElement = document.querySelector('#elementTemplate').content.cloneNode(true);
+const buttonPopupEdit = document.querySelector('.popup__button-edit');
+const buttonPopupAdd = document.querySelector('.popup__button-add');
+
+const formEditElement = document.querySelector('.popup__edit_form');
+
+//Закрытие попапа с помощью escape и overlay
+function addListeners(popup) {
+  document.addEventListener('keydown', closePopupEsc);
+  popup.addEventListener('mousedown', closePopupByClick);
+};
+
+function removeListeners(popup) {
+  document.removeEventListener('keydown', closePopupEsc);
+  popup.removeEventListener('mousedown', closePopupByClick);
+};
+
+function closePopupEsc(evt) {
+    if (evt.key === 'Escape') {
+      const popup = document.querySelector('.popup_opened');
+      closePopup(popup);
+    }
+};
+
+ function closePopupByClick(evt) {
+  closePopup(evt.target);
+ };
 
 function openPopup(block) {
     block.classList.add('popup_opened');
+    addListeners(block);
 };
 
 function makeValue() {
   nameInput.value = nameInfo.textContent;
   jobInput.value = jobInfo.textContent;
   openPopup(editPopup);
-}
+  resetInput(formEditElement);
+  disableButton(buttonPopupEdit, config);
+};
  
 function closePopup(block) {
   block.classList.remove('popup_opened');
+  removeListeners(block);
 };
 
 closeAddButtons.forEach(function (button) {
@@ -52,7 +81,7 @@ function handleFormSubmit(evt) {
   nameInfo.textContent = nameInput.value;
   jobInfo.textContent = jobInput.value;
   closePopup(editPopup);
-}
+};
 
 editButton.addEventListener('click', makeValue);
 
@@ -122,7 +151,7 @@ function openPopupImg(element) {
 elementImage.addEventListener('click', () => openPopupImg(element));
 
 return newElement;
-}
+};
 
 function renderElement(block, item) {
   block.prepend(createElement(item))
@@ -146,7 +175,10 @@ function handleAddFormSubmit(evt) {
 };
 
 addButton.addEventListener('click', function() {
-  openPopup(popupAddCard)
+  openPopup(popupAddCard);
+  formAddElement.reset();
+  enableButton(buttonPopupAdd, config);
+  resetInput(formAddElement);
 });
 
 formAddElement.addEventListener('submit', handleAddFormSubmit);

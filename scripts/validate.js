@@ -12,7 +12,7 @@ const showError = (form, input, obj, error) => {
     errorElement.classList.add(obj.errorClass);
     errorElement.textContent = error;
     input.classList.add(obj.inputErrorClass);
-    };
+};
 
 const hideError = (form, input, obj) => {
     const errorElement = form.querySelector(`.${input.id}-error`);
@@ -65,8 +65,17 @@ function toggleButtonState(inputList, buttonElement, obj) {
 
 function disableButton(button, obj) {
     button.classList.remove(obj.inactiveButtonClass);
+    button.disabled = false;
 };
 
 function enableButton(button, obj) {
     button.classList.add(obj.inactiveButtonClass);
+    button.disabled = true;
+};
+
+function resetInput(form) {
+    const inputList = form.querySelectorAll('.popup__input');
+    inputList.forEach(input => {
+        hideError(form, input, config);
+    })
 };
