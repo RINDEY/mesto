@@ -61,7 +61,7 @@ function openEditProfileForm() {
   jobInput.value = jobInfo.textContent;
   openPopup(editPopup);
   resetInput(formEditElement);
-  disableButton(buttonPopupEdit, config);
+  enableButton(buttonPopupEdit, config);
 };
  
 function closePopup(block) {

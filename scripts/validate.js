@@ -36,7 +36,7 @@ const setEventListeners = (formElement, validationConfig) => {
         input.addEventListener('input', function() {
             checkInputValidity(formElement, input, validationConfig);
             toggleButtonState(inputList, buttonElement, validationConfig);
-        });
+        }); 
     });
 };
 
@@ -74,8 +74,10 @@ function enableButton(button, validationConfig) {
 };
 
 function resetInput(form) {
-    const inputList = form.querySelectorAll('.popup__input');
+    const inputList = Array.from(form.querySelectorAll('.popup__input'));
+    const button = form.querySelector(config.submitButtonSelector);
     inputList.forEach(input => {
         hideError(form, input, config);
     })
+    toggleButtonState(inputList, button, config);
 };
