@@ -1,4 +1,4 @@
-export {openPopup, closePopup}
+export {openPopup, closePopup};
 
 function openPopup(block) {
   block.classList.add('popup_opened');
@@ -16,10 +16,10 @@ function removeListeners(popup) {
 };
 
 function closePopupEsc(evt) {
-    if (evt.key === 'Escape') {
-      const popup = document.querySelector('.popup_opened');
-      closePopup(popup);
-    }
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
+  }
 };
 
  function closePopupByClick(evt) {

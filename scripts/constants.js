@@ -1,4 +1,9 @@
-export {config, elements};
+export {config, elements, popupImage, popupCardImage, popupImageDescription};
+
+const popupImage = document.querySelector('.popup_image');
+const popupCardImage = document.querySelector('.popup__card-image');
+const popupImageDescription = document.querySelector('.popup__caption');
+
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
